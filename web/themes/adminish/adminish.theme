@@ -1,0 +1,175 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Adminimal theme.
+ */
+
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Form\FormStateInterface;
+
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function adminish_preprocess_html(&$variables) {
+
+  // Add adminimal class to the body.
+  $variables['attributes']['class'][] = 'adminimal';
+
+}
+
+
+function adminish_preprocess_views_view (&$vars) {
+  // only manipulate the print pages to provide summary
+  // for the entire report.  Months are summerized within the table
+  if ('listings_new' == $vars['view']->id()) {
+    // fields to summarize 
+    $fields = array(
+      'field_attorney_paid_comm',
+      'field_commission',
+      'field_comp_commission',
+      'field_due_agent',
+      'field_e_and_o_insurance',
+      'field_fmls',
+      'field_mdrt_credit',
+      'field_other_amount',
+      'field_sale_price',
+      'field_transaction_fee',
+      'field_accounts_receivable',
+    );
+    $fields_to_skip_on_checksum = array('field_sale_price', 'field_commission', 'field_attorney_paid_comm');
+
+    // build starting sum array of zero values
+    $sum = array();
+    foreach ($fields as $field) {
+      $sum [$field] = array(
+        '#markup' => 0,
+        '#prefix' => '<div class="sum-value field--type-decimal ' . $field .'">',
+        '#suffix' => '</div>',
+        );
+    }
+    // build a new render array for the summary row
+    // keep track of the number of rows
+    $count = 0;
+    //get table count
+      $tables = count ($vars['rows']);
+    // iterate over all tables (months).
+    for ($table = 0; $table < $tables; $table++) {
+      // foreach row in a table (listing in the month).
+      foreach ($vars['rows'][$table]['#rows'] as $row) {
+        $count++;
+        // iterate over each field
+        $node = $row->_entity;
+        
+    
+        
+        foreach ($fields as $field) {
+          // convert to float and add to summary array
+          $val = floatval ( str_replace ( ',', '', $node->get($field)->value ) );
+          $sum[$field] ['#markup'] += $val ;
+        }
+        
+      }
+    }
+   
+    $sum['checksum'] = array(
+        '#markup' => $sum['field_commission']['#markup'],
+        '#prefix' => '<div class="sum-value field--type-decimal ' . $field .'">',
+        '#suffix' => '</div>',
+        );
+    foreach ($fields as $field) {
+     if (!in_array( $field, $fields_to_skip_on_checksum )) {
+      $sum['checksum']['#markup'] -= $sum[$field]['#markup'];
+     }
+    }
+    // create checksum for values.  Add all fees, subtract from commisions
+    
+    // format the results
+    foreach ($sum as $key => $value) {
+      $sum[$key]['#markup'] = '$' . number_format ($value['#markup'], 2);
+    }
+    // add in the count
+    $sum ['count'] = array(
+      '#markup' => '( ' . $count . ' Listings )',
+      '#prefix' => '<div class="sum-value field--type-decimal count">',
+      '#suffix' => '</div>',
+      );
+    //kint ($sum);
+    // add render arrays to template array
+    $vars[ 'summary_row' ] = $sum;
+  }
+}
+
+
+
+function adminish_preprocess_views_view_table(&$vars) {
+  if ('listings_new' == $vars['view']->id()) {
+    $fields = array('field_attorney_paid_comm',
+              'field_commission',
+              'field_comp_commission',
+              'field_due_agent',
+              'field_e_and_o_insurance',
+              'field_fmls',
+              'field_mdrt_credit',
+              'field_other_amount',
+              'field_sale_price',
+              'field_transaction_fee',
+              'field_accounts_receivable',
+              );
+    $fields_to_skip_on_checksum = array('field_sale_price', 'field_commission', 'field_attorney_paid_comm');
+    
+    // build starting sum array
+    $sum = array();
+    foreach ($fields as $field) {
+      $sum [$field] = array(
+        '#markup' => 0,
+        '#prefix' => '<div class="sum-value field--type-decimal ' . $field .'">',
+        '#suffix' => '</div>',
+        );
+    }
+    // build a new render array for the summary row
+    
+    // foreach row
+    foreach ($vars['result'] as $index => $row) {
+      // iterate over each field
+      $node = $row->_entity;
+      
+  
+      
+      foreach ($fields as $field) {
+        // convert to float and add to summary array
+        $val = floatval ( str_replace ( ',', '', $node->get($field)->value ) );
+        $sum[$field] ['#markup'] += $val ;
+      }
+    }
+    $sum['checksum'] = array(
+        '#markup' => $sum['field_commission']['#markup'],
+        '#prefix' => '<div class="sum-value field--type-decimal ' . $field .'">',
+        '#suffix' => '</div>',
+        );
+    foreach ($fields as $field) {
+     if (!in_array( $field, $fields_to_skip_on_checksum )) {
+      $sum['checksum']['#markup'] -= $sum[$field]['#markup'];
+     }
+    }
+    // create checksum for values.  Add all fees, subtract from commisions
+    
+    
+    // format the results
+    foreach ($sum as $key => $value) {
+      $sum[$key]['#markup'] = '$' . number_format ($value['#markup'], 2);
+    }
+    // add in the count
+    $sum ['count'] = array(
+      '#markup' => '( ' . count($vars['result']) . ' Listings )',
+      '#prefix' => '<div class="sum-value field--type-decimal count">',
+      '#suffix' => '</div>',
+      );
+    // add render arrays to template array
+    $vars[ 'summary_row' ] = $sum;
+  }
+}
+function adminish_preprocess_views_view_grid (&$vars) {
+
+}

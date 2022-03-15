@@ -1,0 +1,11 @@
+listingform:
+  version: 1.x
+  css:
+    theme:
+      inc/custom.css: {}
+  js:
+    inc/custom.js: {}
+    inc/moment.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

@@ -1,0 +1,30 @@
+header nav {
+  display: none;
+}
+body.adminimal.toolbar-tray-open.toolbar-fixed.toolbar-horizontal {
+  padding-top: 0 !important;
+}
+.contextual {
+  display: none !important;
+}
+#toolbar-administration {
+  display: none;
+}
+.region-breadcrumb {
+  display: none;
+}
+
+h1 {
+  padding: 0 !important;
+  margin: 0 0 14px 0 !important;
+}
+header {
+  display: none;
+}
+form {
+display: none;
+}
+
+tr {
+  page-break-inside:avoid;
+}

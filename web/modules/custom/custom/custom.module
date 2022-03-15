@@ -1,0 +1,122 @@
+<?php
+
+/**
+ * @file
+ * Contains custom.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Database\Database;
+
+define ('CUSTOM_START_MONTH_FIELD', 'custom_start_month_field');
+define ('CUSTOM_END_MONTH_FIELD', 'custom_end_month_field');
+define ('CUSTOM_START_YEAR_FIELD', 'custom_start_year_field');
+define ('CUSTOM_END_YEAR_FIELD', 'custom_end_year_field');
+define ('CUSTOM_START_FIELDSET', 'custom_start_fieldset');
+define ('CUSTOM_END_FIELDSET', 'custom_end_fieldset');
+
+
+function custom_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'custom/listingform';
+}
+
+/**
+ * Implements hook_help().
+ */
+function custom_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom module.
+    case 'help.page.custom':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom code for RealtyPro') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+* Implements hook_entity_info_alter().
+*/
+function custom_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['page_width'] = array(
+    'label' => t('Page Width'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
+ * Impleements hook_form_BASE_FORM_ID_alter
+ *
+ */
+
+function custom_form_alter (&$form, &$form_state, $form_id) {
+  
+}
+
+/**
+ * Impleements hook_form_BASE_FORM_ID_alter
+ *
+ */
+
+function custom_form_views_exposed_form_alter (&$form, &$form_state) {
+
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $form_state->get('view');
+  $view_id = $view->id(); $display = $view->getDisplay()->getPluginId();
+  if ($view->id() == 'listings_new' && $view->getDisplay()->getPluginId() == 'page') {
+    $form['field_start_date_value']['#type'] = 'date';
+    $form['field_end_date_value']['#type'] = 'date';
+  }
+//var_dump (['viewId' => $view_id, 'display' => $display, 'form' => $form]);
+  if (isset($form['field_selling_agent_target_id'])) {
+    // get list of agents
+    $connection = Database::getConnection();
+    $agents = $connection->select('node_field_data', 'nfd')
+      ->fields('nfd', array('nid', 'title'))
+      ->condition('nfd.type', 'agent')
+      ->orderBy('title', 'ASC')
+      ->execute()
+      ->fetchAll();
+      
+    $options = array('NULL' => '-Select Agent-');
+    foreach ($agents as $agent) {
+      $options[$agent->nid] = $agent->title . ":" . $agent->nid;
+    }
+    $form['select_agent'] = array(
+      '#type' => 'select',
+      '#title' => 'Selling Agent',
+      '#options' => $options,
+      '#value' => 'all',
+    );
+  }
+  //$form['#validate'][] = '_custom_exposed_filter_date_handling';
+}
+
+function _custom_build_year_select() {
+  $options = array();
+  $start = 2000;
+  $end = date('Y');
+  for ($count = $start; $count <= $end; $count++) {
+    $options [$count] = $count;
+  }
+  return $options;
+}
+
+
+function _custom_exposed_filter_date_handling (array &$form, &$form_state) {
+  // handle validation of new fields and updating values
+  
+  //MOVING VALIDATION TO JS 
+  // when we have select options, update the original fields
+  //$start = $form_state->getValue(CUSTOM_START_MONTH_FIELD);
+  //$end = $form_state->getValue(CUSTOM_END_MONTH_FIELD);
+  //$form['field_sale_date_value']['#value'] =  "2016-$start-01 00:00:00";
+  //$form['field_sale_date_value_1']['#value'] =  "2016-$end-30 00:00:00";
+  ////$form_state->setValue('field_sale_date_value', "2016-$start-01 00:00:00");
+  //$form_state->setValue('field_sale_date_value_1', "2016-$end-30 00:00:00");
+
+  
+  //kint ($form);
+}
