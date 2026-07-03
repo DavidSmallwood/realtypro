@@ -1,0 +1,22 @@
+uuid: ddd33cc9-93e2-415d-9aee-39cf8b64f66a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - adminish
+_core:
+  default_config_hash: CyX_aDKAka2_eihevNLscCHDYrzDgIqwWzFVEFRKIww
+id: adminish_primary_local_tasks
+theme: adminish
+region: header
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

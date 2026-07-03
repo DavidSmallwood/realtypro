@@ -1,0 +1,8 @@
+uuid: a96edb6c-6ada-4cfe-9d05-5f514fb03895
+langcode: en
+status: true
+dependencies: {  }
+name: 'Agent Type'
+vid: agent_type
+description: ''
+weight: 0

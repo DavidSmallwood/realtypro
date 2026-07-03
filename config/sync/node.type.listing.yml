@@ -1,0 +1,17 @@
+uuid: 41c6906a-1e53-427a-8d00-d04fe3c3edfa
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Listing
+type: listing
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

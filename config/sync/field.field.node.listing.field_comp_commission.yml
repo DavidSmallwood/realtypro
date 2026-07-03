@@ -1,0 +1,25 @@
+uuid: e3860a82-007f-4368-8700-bdc947e4b7ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comp_commission
+    - node.type.listing
+id: node.listing.field_comp_commission
+field_name: field_comp_commission
+entity_type: node
+bundle: listing
+label: 'Comp. Commission'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

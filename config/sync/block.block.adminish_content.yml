@@ -1,0 +1,22 @@
+uuid: 65af4b58-99ab-437a-a526-fba576462477
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - adminish
+_core:
+  default_config_hash: 80N66GdzEvwqi1m-_GZ-ulkk8AJG9beoXcZ4-pMVKjI
+id: adminish_content
+theme: adminish
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

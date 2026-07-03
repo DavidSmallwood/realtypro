@@ -1,0 +1,19 @@
+uuid: 0897e1c9-eaa9-4900-a129-41083744f49a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_purchaser
+    - node.type.listing
+id: node.listing.field_purchaser
+field_name: field_purchaser
+entity_type: node
+bundle: listing
+label: Purchaser
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

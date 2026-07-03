@@ -1,0 +1,32 @@
+uuid: 20fe8ddb-9d77-41da-8cde-ec12ac782a39
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.listing
+  module:
+    - node
+    - views
+  theme:
+    - adminish
+id: adminish_views_block__listing_block_1
+theme: adminish
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:listing-block_1'
+settings:
+  id: 'views_block:listing-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      agent: agent
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,25 @@
+uuid: 00ca66c6-b585-4af1-8018-245bbac9f93c
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - adminimal_theme
+id: mainnavigation
+theme: adminimal_theme
+region: header
+weight: -5
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: '<none>'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

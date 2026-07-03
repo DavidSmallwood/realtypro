@@ -1,0 +1,23 @@
+uuid: 2064adcf-ffca-4082-864c-76e3b4ac1504
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accounts_receivable
+    - node.type.listing
+id: node.listing.field_accounts_receivable
+field_name: field_accounts_receivable
+entity_type: node
+bundle: listing
+label: 'Accounts Receivable'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

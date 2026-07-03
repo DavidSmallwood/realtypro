@@ -1,0 +1,10 @@
+uuid: 2dea679e-4869-4c58-922a-429a3c89374f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.wrapped
+label: Wrapped
+targetEntityType: node
+cache: true

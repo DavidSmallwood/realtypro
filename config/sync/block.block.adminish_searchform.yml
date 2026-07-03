@@ -1,0 +1,27 @@
+uuid: 8a204ce3-98ee-4da1-9881-3401ede9096c
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+    - system
+  theme:
+    - adminish
+id: adminish_searchform
+theme: adminish
+region: content
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  provider: search
+  label_display: visible
+  page_id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /content-search
+    negate: false
+    context_mapping: {  }

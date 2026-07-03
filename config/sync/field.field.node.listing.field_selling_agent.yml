@@ -1,0 +1,27 @@
+uuid: 171d2269-6b3d-4733-800c-129cbd9c4f5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_selling_agent
+    - node.type.agent
+    - node.type.listing
+id: node.listing.field_selling_agent
+field_name: field_selling_agent
+entity_type: node
+bundle: listing
+label: 'Selling Agent'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      agent: agent
+    sort:
+      field: field_last_name
+      direction: ASC
+field_type: entity_reference

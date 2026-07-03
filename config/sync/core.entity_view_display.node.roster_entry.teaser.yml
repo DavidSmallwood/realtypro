@@ -1,0 +1,24 @@
+uuid: 97c37d96-d506-44d0-8639-573db88039b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.roster_entry.field_contact_number
+    - field.field.node.roster_entry.field_email_address
+    - node.type.roster_entry
+  module:
+    - user
+id: node.roster_entry.teaser
+targetEntityType: node
+bundle: roster_entry
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_contact_number: true
+  field_email_address: true

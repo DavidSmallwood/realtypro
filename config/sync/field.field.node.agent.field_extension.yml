@@ -1,0 +1,19 @@
+uuid: 9a9ddd16-042c-434b-b900-c218270b7cdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extension
+    - node.type.agent
+id: node.agent.field_extension
+field_name: field_extension
+entity_type: node
+bundle: agent
+label: Extension
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: 56b6a4b5-9cb0-462b-9700-a9cc12a50107
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.listing
+id: node.listing.title
+field_name: title
+entity_type: node
+bundle: listing
+label: Address
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: d0dabffd-10cb-4d50-9200-c4eef20a996a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Public Page'
+type: public_page
+description: 'Pages visible to anonymous traffic'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

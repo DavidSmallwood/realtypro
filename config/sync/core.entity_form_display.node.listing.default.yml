@@ -1,0 +1,196 @@
+uuid: 8aa41b0d-569e-469c-8605-5d5b0f240820
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.listing.field_accounts_receivable
+    - field.field.node.listing.field_agent_type
+    - field.field.node.listing.field_attorney_paid_comm
+    - field.field.node.listing.field_city
+    - field.field.node.listing.field_commission
+    - field.field.node.listing.field_comp_commission
+    - field.field.node.listing.field_due_agent
+    - field.field.node.listing.field_e_and_o_insurance
+    - field.field.node.listing.field_fmls
+    - field.field.node.listing.field_mdrt_credit
+    - field.field.node.listing.field_mortgage_company
+    - field.field.node.listing.field_other_amount
+    - field.field.node.listing.field_other_description
+    - field.field.node.listing.field_purchaser
+    - field.field.node.listing.field_sale_date
+    - field.field.node.listing.field_sale_price
+    - field.field.node.listing.field_seller
+    - field.field.node.listing.field_selling_agent
+    - field.field.node.listing.field_transaction_fee
+    - field.field.node.listing.field_zip_code
+    - node.type.listing
+  module:
+    - datetime
+id: node.listing.default
+targetEntityType: node
+bundle: listing
+mode: default
+content:
+  field_accounts_receivable:
+    weight: 15
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_agent_type:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_attorney_paid_comm:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_city:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_commission:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_comp_commission:
+    weight: 16
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_due_agent:
+    weight: 19
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_e_and_o_insurance:
+    weight: 13
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_fmls:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_mdrt_credit:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_other_amount:
+    weight: 17
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_other_description:
+    weight: 18
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_purchaser:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sale_date:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_sale_price:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_seller:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_selling_agent:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_transaction_fee:
+    weight: 14
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_zip_code:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 121
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_mortgage_company: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

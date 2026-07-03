@@ -1,0 +1,25 @@
+uuid: c7c502dd-4810-491b-ae03-03dc70157234
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sale_price
+    - node.type.listing
+id: node.listing.field_sale_price
+field_name: field_sale_price
+entity_type: node
+bundle: listing
+label: 'Sale Price'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

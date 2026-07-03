@@ -1,0 +1,31 @@
+uuid: a781a24e-4178-4c1b-b600-f1b7c5b02b7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agent_type
+    - node.type.listing
+    - taxonomy.vocabulary.agent_type
+  content:
+    - 'taxonomy_term:agent_type:fa5e46f6-af37-4038-880f-159cc08b694d'
+id: node.listing.field_agent_type
+field_name: field_agent_type
+entity_type: node
+bundle: listing
+label: 'Agent Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: fa5e46f6-af37-4038-880f-159cc08b694d
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      agent_type: agent_type
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

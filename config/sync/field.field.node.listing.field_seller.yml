@@ -1,0 +1,19 @@
+uuid: 17b7066e-66f3-41b0-ac00-dddd9cd1c96c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seller
+    - node.type.listing
+id: node.listing.field_seller
+field_name: field_seller
+entity_type: node
+bundle: listing
+label: Seller
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

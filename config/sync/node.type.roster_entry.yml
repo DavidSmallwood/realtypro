@@ -1,0 +1,18 @@
+uuid: b58f21ef-133c-4ff8-8e3f-63366716f6af
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Roster Entry'
+type: roster_entry
+description: 'Non-agent details to be included on the Roster'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

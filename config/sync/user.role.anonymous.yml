@@ -1,0 +1,12 @@
+uuid: deac0cf0-0744-465d-9800-a2f8c75c99c6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'use text format restricted_html'

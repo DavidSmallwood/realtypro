@@ -1,0 +1,23 @@
+uuid: 4d7e91b7-8e39-420a-8407-7b6f5aee04bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_active
+    - node.type.agent
+id: node.agent.field_active
+field_name: field_active
+entity_type: node
+bundle: agent
+label: Active
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Active
+  off_label: Inactive
+field_type: boolean

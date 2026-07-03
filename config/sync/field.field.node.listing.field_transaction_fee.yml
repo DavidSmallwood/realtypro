@@ -1,0 +1,25 @@
+uuid: 2ce32182-279a-49f7-ba00-a775d5b45b21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_transaction_fee
+    - node.type.listing
+id: node.listing.field_transaction_fee
+field_name: field_transaction_fee
+entity_type: node
+bundle: listing
+label: 'Transaction Fee'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

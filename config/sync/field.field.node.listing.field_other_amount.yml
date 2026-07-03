@@ -1,0 +1,25 @@
+uuid: 95d52bfe-72aa-4ac0-9500-d57df42d43a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_amount
+    - node.type.listing
+id: node.listing.field_other_amount
+field_name: field_other_amount
+entity_type: node
+bundle: listing
+label: 'Other Amount'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

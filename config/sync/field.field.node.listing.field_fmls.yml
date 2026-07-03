@@ -1,0 +1,25 @@
+uuid: 1ca468c0-8c14-43fd-9045-690022719d64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fmls
+    - node.type.listing
+id: node.listing.field_fmls
+field_name: field_fmls
+entity_type: node
+bundle: listing
+label: FMLS
+description: 'FMLS fees associated with the sale'
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

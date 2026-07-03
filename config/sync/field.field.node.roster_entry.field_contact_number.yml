@@ -1,0 +1,19 @@
+uuid: 92c99b6a-c36f-4e57-b804-4e7a7dac7652
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_number
+    - node.type.roster_entry
+id: node.roster_entry.field_contact_number
+field_name: field_contact_number
+entity_type: node
+bundle: roster_entry
+label: 'Contact Number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

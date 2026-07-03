@@ -1,0 +1,15 @@
+uuid: 8247d192-ac6c-48b2-a404-4a66d8788f2b
+name: 'Realty Professionals'
+mail: drsmallwood@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: ''

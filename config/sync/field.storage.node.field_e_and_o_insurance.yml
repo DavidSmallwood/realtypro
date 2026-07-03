@@ -1,0 +1,20 @@
+uuid: 65eff433-003d-4a13-8b00-bdda4790d0d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_e_and_o_insurance
+field_name: field_e_and_o_insurance
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

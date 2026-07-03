@@ -1,0 +1,32 @@
+uuid: 4dea1afe-284b-44bb-8403-03bc55c44c79
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.listing
+  module:
+    - node
+    - views
+  theme:
+    - adminimal_theme
+id: views_block__listing_block_1
+theme: adminimal_theme
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:listing-block_1'
+settings:
+  id: 'views_block:listing-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      agent: agent
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

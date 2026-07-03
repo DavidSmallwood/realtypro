@@ -1,0 +1,60 @@
+uuid: 161fa6fd-6d2d-4f11-a406-6e47c822eeff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.agent.field_active
+    - field.field.node.agent.field_contact_number
+    - field.field.node.agent.field_email_address
+    - field.field.node.agent.field_extension
+    - field.field.node.agent.field_first_name
+    - field.field.node.agent.field_last_name
+    - node.type.agent
+  module:
+    - user
+id: node.agent.default
+targetEntityType: node
+bundle: agent
+mode: default
+content:
+  field_active:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_contact_number:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_email_address:
+    weight: 3
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_extension:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_first_name: true
+  field_last_name: true

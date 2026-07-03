@@ -1,0 +1,25 @@
+uuid: 6d37bbd5-c856-4e04-8412-185edda13182
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_e_and_o_insurance
+    - node.type.listing
+id: node.listing.field_e_and_o_insurance
+field_name: field_e_and_o_insurance
+entity_type: node
+bundle: listing
+label: 'E & O Insurance'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

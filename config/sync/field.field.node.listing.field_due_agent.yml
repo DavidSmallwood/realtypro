@@ -1,0 +1,25 @@
+uuid: 1faedf83-8bae-4645-9c00-d890dc30f870
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_due_agent
+    - node.type.listing
+id: node.listing.field_due_agent
+field_name: field_due_agent
+entity_type: node
+bundle: listing
+label: 'Due Agent'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,25 @@
+uuid: d51611dc-a2fe-48b9-8600-0e482d8e56a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attorney_paid_comm
+    - node.type.listing
+id: node.listing.field_attorney_paid_comm
+field_name: field_attorney_paid_comm
+entity_type: node
+bundle: listing
+label: 'Attorney Paid Comm.'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

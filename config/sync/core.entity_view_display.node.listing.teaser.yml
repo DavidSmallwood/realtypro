@@ -1,0 +1,60 @@
+uuid: 35cee1d1-4981-4561-a800-d34f523a6038
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.listing.field_accounts_receivable
+    - field.field.node.listing.field_agent_type
+    - field.field.node.listing.field_attorney_paid_comm
+    - field.field.node.listing.field_city
+    - field.field.node.listing.field_commission
+    - field.field.node.listing.field_comp_commission
+    - field.field.node.listing.field_due_agent
+    - field.field.node.listing.field_e_and_o_insurance
+    - field.field.node.listing.field_fmls
+    - field.field.node.listing.field_mdrt_credit
+    - field.field.node.listing.field_mortgage_company
+    - field.field.node.listing.field_other_amount
+    - field.field.node.listing.field_other_description
+    - field.field.node.listing.field_purchaser
+    - field.field.node.listing.field_sale_date
+    - field.field.node.listing.field_sale_price
+    - field.field.node.listing.field_seller
+    - field.field.node.listing.field_selling_agent
+    - field.field.node.listing.field_transaction_fee
+    - field.field.node.listing.field_zip_code
+    - node.type.listing
+  module:
+    - user
+id: node.listing.teaser
+targetEntityType: node
+bundle: listing
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_accounts_receivable: true
+  field_agent_type: true
+  field_attorney_paid_comm: true
+  field_city: true
+  field_commission: true
+  field_comp_commission: true
+  field_due_agent: true
+  field_e_and_o_insurance: true
+  field_fmls: true
+  field_mdrt_credit: true
+  field_mortgage_company: true
+  field_other_amount: true
+  field_other_description: true
+  field_purchaser: true
+  field_sale_date: true
+  field_sale_price: true
+  field_seller: true
+  field_selling_agent: true
+  field_transaction_fee: true
+  field_zip_code: true
